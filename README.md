@@ -1,3 +1,29 @@
+# Task CLI Lab
+
+This project provides a simple task manager with a command-line interface and object-oriented backend.
+
+Usage
+1. Install dependencies:
+
+```bash
+python3 -m pip install -r requirements.txt
+```
+
+2. Use the CLI:
+
+```bash
+python bin/taskcli.py add-task alice "Write tests"
+python bin/taskcli.py list-tasks alice
+python bin/taskcli.py complete-task alice 1
+```
+
+Files
+- `lib/task_manager.py`: `TaskManager` class with JSON persistence.
+- `bin/taskcli.py`: CLI using `argparse`.
+- `testing/`: Unit and integration tests.
+
+Contributing
+- Run tests with `pytest -q`.
 
 # Module Lab: Automating Python Projects with Pip, PyPi & Scripting
 
