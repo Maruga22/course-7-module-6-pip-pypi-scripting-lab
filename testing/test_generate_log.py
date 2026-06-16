@@ -43,3 +43,11 @@ def test_empty_log_list_creates_empty_file():
         content = file.read()
     assert content == ""
     os.remove(filename)
+
+def test_generate_log_prints_confirmation_message(capsys, log_data):
+    """Test that the function prints a confirmation message with the filename."""
+    filename = generate_log(log_data)
+    captured = capsys.readouterr()
+    assert "Log written to" in captured.out, "Confirmation message not printed"
+    assert filename in captured.out, "Filename not in confirmation message"
+    os.remove(filename)
